@@ -1,0 +1,4 @@
+#!/bin/bash
+JAR=`ls target/dpef-*.jar`
+
+exec java -cp $JAR org.webdatacommons.framework.cli.Master "$@"
