@@ -1,0 +1,6 @@
+<http://www.test.de> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/12/cal/icaltzd#vcalendar> <http://www.test.de> <ex:html-mf-hcalendar>  .
+_:node1b2avkto3x1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/12/cal/icaltzd#Vevent> <http://www.test.de> <ex:html-mf-hcalendar>  .
+_:node1b2avkto3x1 <http://www.w3.org/2002/12/cal/icaltzd#summary> "The microformats.org site was launched" <http://www.test.de> <ex:html-mf-hcalendar>  .
+_:node1b2avkto3x1 <http://www.w3.org/2002/12/cal/icaltzd#location> "San Francisco, CA, USA" <http://www.test.de> <ex:html-mf-hcalendar>  .
+_:node1b2avkto3x1 <http://www.w3.org/2002/12/cal/icaltzd#dtstart> "2005-06-20" <http://www.test.de> <ex:html-mf-hcalendar>  .
+<http://www.test.de> <http://www.w3.org/2002/12/cal/icaltzd#component> _:node1b2avkto3x1 <http://www.test.de> <ex:html-mf-hcalendar>  .
