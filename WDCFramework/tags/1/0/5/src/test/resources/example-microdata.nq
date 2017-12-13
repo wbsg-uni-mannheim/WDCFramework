@@ -1,0 +1,10 @@
+_:node22c16de3cdc02118a4272da3e756328 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Movie> <http://www.test.de> <ex:html-microdata>  .
+_:node22c16de3cdc02118a4272da3e756328 <http://schema.org/Movie/trailer> <http://www.test.de/../movies/avatar-theatrical-trailer.html> <http://www.test.de> <ex:html-microdata>  .
+_:noded060142d603a391e7a611d7c22814 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> <http://www.test.de> <ex:html-microdata>  .
+_:noded060142d603a391e7a611d7c22814 <http://schema.org/Person/name> "James Cameron" <http://www.test.de> <ex:html-microdata>  .
+_:noded060142d603a391e7a611d7c22814 <http://schema.org/Person/birthDate> "August 16, 1954" <http://www.test.de> <ex:html-microdata>  .
+_:node22c16de3cdc02118a4272da3e756328 <http://schema.org/Movie/director> _:noded060142d603a391e7a611d7c22814 <http://www.test.de> <ex:html-microdata>  .
+_:node22c16de3cdc02118a4272da3e756328 <http://schema.org/Movie/name> "Avatar" <http://www.test.de> <ex:html-microdata>  .
+_:node22c16de3cdc02118a4272da3e756328 <http://schema.org/Movie/genre> "Science fiction" <http://www.test.de> <ex:html-microdata>  .
+<http://www.test.de> <http://www.w3.org/1999/xhtml/microdata#item> _:node22c16de3cdc02118a4272da3e756328 <http://www.test.de> <ex:html-microdata>  .
+<http://www.test.de> <http://purl.org/dc/terms/title> " My GEO example " <http://www.test.de> <ex:html-microdata>  .

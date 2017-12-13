@@ -1,0 +1,72 @@
+# AWS Access Properties
+## Your AWS Access Key (Update with your key)
+awsAccessKey = TODO
+## Your AWS Secret Key (Update with your key)
+awsSecretKey = TODO
+## Name of the key pair you can use to access the instances. (Update with your key)
+ec2keypair = TODO
+
+# AWS S3 Properties
+## Your S3 Bucket name for results
+resultBucket = TODO
+## Your S3 Bucket for the code to be deployed on the EC2 instances
+deployBucket = TODO
+# AWS S3 data bucket prefix for public datasets (No need to change, unless you want to process other data than CC)
+##dataBucket = aws-publicdatasets
+dataBucket = wdc-2016-data
+# Common Crawl data bucket (Change depending on the dataset you want to process)
+dataPrefix = test_input
+# Name of the jar of the WDC Framework, after uploading to S3 (No need to change)
+deployFilename = pdef.jar
+
+# AWS EC2 Properties
+## Endpoint of the EC2 API (No need to change, unless you want to launch your instances within another region)
+ec2endpoint = ec2.us-east-1.amazonaws.com
+## AMI which will be launched (Make sure the AMI you select has e.g. the write system language, which can influence your reading and writing of files.)
+ec2ami = ami-018c9568
+## Please check the available instance descriptions for the right instance type for your process. (Make sure #CPU, #RAM and #DISC is enough for your job!)
+## Pricing: https://aws.amazon.com/ec2/pricing/
+## EC2 Instant Types: https://aws.amazon.com/ec2/instance-types/
+ec2instancetype = c3.2xlarge
+
+# AWS SQS Properties
+## Name of the SQS with AWS (No need to change, unless you are running other SQS with a similar name)
+jobQueueName = jobs
+## AWS Queue endpoint (No need to change)
+queueEndpoint = https://queue.amazonaws.com/
+## Data Suffix for file processing and filtering (Change according to the files you want to put into the queue, e.g. .warc.gz, .arc.gz, ...)
+dataSuffix = .warc.gz
+## Batch size for filling the queue (No need to change)
+batchsize = 10
+## Time the SQS waits for a message - object taken from the queue - to be returned, no matter if successful processed or not (Change according to your average processing time of one file. Good results with 3x the average processing time)
+jobTimeLimit = 900
+## Number of times a message is retried before it is left out and an error is written to the SDB (No need to change, unless you know that some message will cause errors and you cannot process them)
+jobRetryLimit = 3
+
+# AWS SimpleDB Properties
+## Name of the SDB for data written per file (No need to change, unless you already have a SimpleDB with this name)
+sdbdatadomain = data
+## Name of the SDB for errors occurring while processing a file (No need to change, unless you already have a SimpleDB with this name)
+sdberrordomain = failures
+## In case one of the domains above has less then this number of entries, statistics will not be written (Change according to your preferences)
+minResults = 5
+
+# WDC Extraction Framework Properties
+## the class you want to use to process your files. This class needs to implement org.webdatacommons.framework.processor.FileProcessor
+processorClass = org.webdatacommons.hyperlinkgraph.processor.WarcProcessor
+## Memory which will be given to Java Process, when executing the .jar on each machine (java -Xmx)
+javamemory = 1G
+
+# WDC Extraction Framework Processor Specific Properties
+## log regex failures (structured data extraction)
+logRegexFailures = false
+
+# WDC WebTables Specific Properties
+## extraction of top n terms
+extractTopNTerms = true
+## in case you want mh, use mh, otherwise basic is used
+extractionAlgorithm = org.webdatacommons.webtables.extraction.BasicExtraction
+## selected model for phase 1
+phase1ModelPath = /RandomForest_P1.mdl
+## selected model for phase 2
+phase2ModelPath = /RandomForest_P2.md
