@@ -1,0 +1,8 @@
+_:nodeff9a89e3a4977cab95a31ea466607bb9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://sindice.com/hlisting/0.1/Listing> <http://www.test.de> <ex:html-mf-hlisting>  .
+_:node1b2auhpk1x1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://sindice.com/hlisting/0.1/Lister> <http://www.test.de> <ex:html-mf-hlisting>  .
+_:nodeff9a89e3a4977cab95a31ea466607bb9 <http://sindice.com/hlisting/0.1/lister> _:node1b2auhpk1x1 <http://www.test.de> <ex:html-mf-hlisting>  .
+_:nodeff9a89e3a4977cab95a31ea466607bb9 <http://sindice.com/hlisting/0.1/dtlisted> "20060702T142835-0800" <http://www.test.de> <ex:html-mf-hlisting>  .
+_:nodeff9a89e3a4977cab95a31ea466607bb9 <http://sindice.com/hlisting/0.1/dtexpired> "20060213T152835-0800" <http://www.test.de> <ex:html-mf-hlisting>  .
+_:nodeff9a89e3a4977cab95a31ea466607bb9 <http://sindice.com/hlisting/0.1/price> "$1" <http://www.test.de> <ex:html-mf-hlisting>  .
+_:nodeff9a89e3a4977cab95a31ea466607bb9 <http://sindice.com/hlisting/0.1/description> "You are bidding on a Bounty Hunter 840 VLF/TR. I have never used this but I put batteries in it and it turned on. The unit is in goo cosmetic shape with no signs of wear. I do not know too much about this detector so do your research before bidding. It takes 2 - 9V batteries (not included). Find some treasure or coins in your own back yard. Good luck bidding on this NO RESERVE auction. Unit is sold as is as I have never used it. Thanks and good luck! Tagged: Metal Detector, Used" <http://www.test.de> <ex:html-mf-hlisting>  .
+_:nodeff9a89e3a4977cab95a31ea466607bb9 <http://sindice.com/hlisting/0.1/summary> "BOUNTY HUNTER 840 *not garrett, minelab, whites*" <http://www.test.de> <ex:html-mf-hlisting>  .

@@ -1,0 +1,23 @@
+_:nodef037b36de952e823c38682f79cb18f0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/wo/species> <http://www.test.de> <ex:html-mf-species>  .
+_:nodef037b36de952e823c38682f79cb18f0 <http://purl.org/ontology/wo/scientificName> "Aaptos glutinans" <http://www.test.de> <ex:html-mf-species>  .
+_:nodef037b36de952e823c38682f79cb18f0 <http://purl.org/ontology/wo/kingdom> _:nodea9ead4923671d68cb38196c8af58b517 <http://www.test.de> <ex:html-mf-species>  .
+_:nodea9ead4923671d68cb38196c8af58b517 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/wo/Kingdom> <http://www.test.de> <ex:html-mf-species>  .
+_:nodea9ead4923671d68cb38196c8af58b517 <http://purl.org/ontology/wo/kingdomName> "Animalia" <http://www.test.de> <ex:html-mf-species>  .
+_:nodef037b36de952e823c38682f79cb18f0 <http://purl.org/ontology/wo/phylum> _:nodef4a2e014384455f293da993463a45f95 <http://www.test.de> <ex:html-mf-species>  .
+_:nodef4a2e014384455f293da993463a45f95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/wo/Phylum> <http://www.test.de> <ex:html-mf-species>  .
+_:nodef4a2e014384455f293da993463a45f95 <http://purl.org/ontology/wo/phylumName> "Porifera" <http://www.test.de> <ex:html-mf-species>  .
+_:nodef037b36de952e823c38682f79cb18f0 <http://purl.org/ontology/wo/order> _:nodeae8b3a3da9facde1d1e027b4252a0fe <http://www.test.de> <ex:html-mf-species>  .
+_:nodeae8b3a3da9facde1d1e027b4252a0fe <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/wo/Order> <http://www.test.de> <ex:html-mf-species>  .
+_:nodeae8b3a3da9facde1d1e027b4252a0fe <http://purl.org/ontology/wo/orderName> "Hadromerida" <http://www.test.de> <ex:html-mf-species>  .
+_:nodef037b36de952e823c38682f79cb18f0 <http://purl.org/ontology/wo/family> _:nodef65f209f6a783058a733556e1363508 <http://www.test.de> <ex:html-mf-species>  .
+_:nodef65f209f6a783058a733556e1363508 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/wo/Family> <http://www.test.de> <ex:html-mf-species>  .
+_:nodef65f209f6a783058a733556e1363508 <http://purl.org/ontology/wo/familyName> "Suberitidae" <http://www.test.de> <ex:html-mf-species>  .
+_:nodef037b36de952e823c38682f79cb18f0 <http://purl.org/ontology/wo/genus> _:node74508c2a88b537ac6f88ad3f8e4346cc <http://www.test.de> <ex:html-mf-species>  .
+_:node74508c2a88b537ac6f88ad3f8e4346cc <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/wo/Genus> <http://www.test.de> <ex:html-mf-species>  .
+_:node74508c2a88b537ac6f88ad3f8e4346cc <http://purl.org/ontology/wo/genusName> "Aaptos" <http://www.test.de> <ex:html-mf-species>  .
+_:nodef037b36de952e823c38682f79cb18f0 <http://purl.org/ontology/wo/species> _:node5793d351c16491c07276d21a54f8c54 <http://www.test.de> <ex:html-mf-species>  .
+_:node5793d351c16491c07276d21a54f8c54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/wo/Species> <http://www.test.de> <ex:html-mf-species>  .
+_:node5793d351c16491c07276d21a54f8c54 <http://purl.org/ontology/wo/speciesName> "A. glutinans" <http://www.test.de> <ex:html-mf-species>  .
+_:nodef037b36de952e823c38682f79cb18f0 <http://purl.org/ontology/wo/class> _:node14a4e62bed7b7dcb43e279240f6464e <http://www.test.de> <ex:html-mf-species>  .
+_:node14a4e62bed7b7dcb43e279240f6464e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/wo/Class> <http://www.test.de> <ex:html-mf-species>  .
+_:node14a4e62bed7b7dcb43e279240f6464e <http://purl.org/ontology/wo/className> "Demospongiae" <http://www.test.de> <ex:html-mf-species>  .

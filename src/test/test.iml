@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/java" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="target" level="project" />
+    <orderEntry type="library" name="lib3" level="project" />
+    <orderEntry type="library" name="pig-analysis" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="commoncrawl-0.1" level="project" />
+    <orderEntry type="library" name="lib2" level="project" />
+    <orderEntry type="library" name="parse-tika1" level="project" />
+    <orderEntry type="library" name="commoncrawl-0.11" level="project" />
+    <orderEntry type="library" name="parse-tika2" level="project" />
+    <orderEntry type="module" module-name="main4" />
+    <orderEntry type="module" module-name="main" />
+    <orderEntry type="module" module-name="main" />
+    <orderEntry type="module" module-name="main4" />
+  </component>
+</module>
+
