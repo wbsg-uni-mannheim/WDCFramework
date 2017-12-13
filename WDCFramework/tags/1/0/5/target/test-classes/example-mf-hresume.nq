@@ -1,0 +1,10 @@
+_:nodeb489d11394fd6e9614794fbe678c32bf <http://www.w3.org/2006/vcard/ns#fn> "John Example" <http://www.test.de> <ex:html-mf-hcard>  .
+_:nodeb489d11394fd6e9614794fbe678c32bf <http://www.w3.org/2006/vcard/ns#n> _:node1b2aul3i6x1 <http://www.test.de> <ex:html-mf-hcard>  .
+_:node1b2aul3i6x1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/vcard/ns#Name> <http://www.test.de> <ex:html-mf-hcard>  .
+_:node1b2aul3i6x1 <http://www.w3.org/2006/vcard/ns#given-name> "John" <http://www.test.de> <ex:html-mf-hcard>  .
+_:node1b2aul3i6x1 <http://www.w3.org/2006/vcard/ns#family-name> "Example" <http://www.test.de> <ex:html-mf-hcard>  .
+_:nodeb489d11394fd6e9614794fbe678c32bf <http://www.w3.org/2006/vcard/ns#email> <mailto:john@example.com> <http://www.test.de> <ex:html-mf-hcard>  .
+_:nodeb489d11394fd6e9614794fbe678c32bf <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/vcard/ns#VCard> <http://www.test.de> <ex:html-mf-hcard>  .
+_:nodeff9a89e3a4977cab95a31ea466607bb9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> <http://www.test.de> <ex:html-mf-hresume>  .
+_:nodeff9a89e3a4977cab95a31ea466607bb9 <http://ramonantonio.net/doac/0.1/#summary> "I have 10 years experience with all Web\t\t2.0 technologies\u2013 I've been working with\t\tAjax since 1996, designing with pastels\t\twhile others will still using tiled\t\tbackground images and frames..." <http://www.test.de> <ex:html-mf-hresume>  .
+_:nodeff9a89e3a4977cab95a31ea466607bb9 <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> _:nodeb489d11394fd6e9614794fbe678c32bf <http://www.test.de> <ex:html-mf-hresume>  .

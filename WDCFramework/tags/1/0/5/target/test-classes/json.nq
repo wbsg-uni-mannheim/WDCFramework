@@ -1,0 +1,27 @@
+<http://dbpedia.org/resource/Robert_Frost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> <http://www.test.de> <ex:html-embedded-jsonld>  .
+<http://dbpedia.org/resource/Robert_Frost> <http://schema.org/birthDate> "1874-03-26T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> <http://www.test.de> <ex:html-embedded-jsonld>  .
+<http://dbpedia.org/resource/Robert_Frost> <http://schema.org/deathDate> "1963-01-29T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> <http://www.test.de> <ex:html-embedded-jsonld>  .
+<http://dbpedia.org/resource/Robert_Frost> <http://xmlns.com/foaf/0.1/name> "Robert Frost"^^<http://www.w3.org/2001/XMLSchema#string> <http://www.test.de> <ex:html-embedded-jsonld>  .
+_:b0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/WebSite> <http://www.test.de> <ex:html-embedded-jsonld>  .
+_:b0 <http://schema.org/potentialAction> _:b1 <http://www.test.de> <ex:html-embedded-jsonld>  .
+_:b0 <http://schema.org/url> <http://www.spiegel.de/> <http://www.test.de> <ex:html-embedded-jsonld>  .
+_:b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/SearchAction> <http://www.test.de> <ex:html-embedded-jsonld>  .
+_:b1 <http://schema.org/query-input> "required name=search_string"^^<http://www.w3.org/2001/XMLSchema#string> <http://www.test.de> <ex:html-embedded-jsonld>  .
+_:b1 <http://schema.org/target> "http://www.spiegel.de/suche/index.html?suchbegriff={search_string}"^^<http://www.w3.org/2001/XMLSchema#string> <http://www.test.de> <ex:html-embedded-jsonld>  .
+_:node23dbbed8eec426690ecfbfa7dd6172c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> <http://www.test.de> <ex:html-microdata>  .
+_:node23dbbed8eec426690ecfbfa7dd6172c <http://schema.org/Person/image> <http://www.test.de/janedoe.jpg> <http://www.test.de> <ex:html-microdata>  .
+_:node8027b915d68fad69a61d4c5e24a0881 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/PostalAddress> <http://www.test.de> <ex:html-microdata>  .
+_:node8027b915d68fad69a61d4c5e24a0881 <http://schema.org/PostalAddress/streetAddress> "      20341 Whitworth Institute      405 N. Whitworth    " <http://www.test.de> <ex:html-microdata>  .
+_:node8027b915d68fad69a61d4c5e24a0881 <http://schema.org/PostalAddress/postalCode> "98052" <http://www.test.de> <ex:html-microdata>  .
+_:node8027b915d68fad69a61d4c5e24a0881 <http://schema.org/PostalAddress/addressLocality> "Seattle" <http://www.test.de> <ex:html-microdata>  .
+_:node8027b915d68fad69a61d4c5e24a0881 <http://schema.org/PostalAddress/addressRegion> "WA" <http://www.test.de> <ex:html-microdata>  .
+_:node23dbbed8eec426690ecfbfa7dd6172c <http://schema.org/Person/address> _:node8027b915d68fad69a61d4c5e24a0881 <http://www.test.de> <ex:html-microdata>  .
+_:node23dbbed8eec426690ecfbfa7dd6172c <http://schema.org/Person/jobTitle> "Professor" <http://www.test.de> <ex:html-microdata>  .
+_:node23dbbed8eec426690ecfbfa7dd6172c <http://schema.org/Person/name> "Jane Doe" <http://www.test.de> <ex:html-microdata>  .
+_:node23dbbed8eec426690ecfbfa7dd6172c <http://schema.org/Person/telephone> "(425) 123-4567" <http://www.test.de> <ex:html-microdata>  .
+_:node23dbbed8eec426690ecfbfa7dd6172c <http://schema.org/Person/colleague> <http://www.xyz.edu/students/alicejones.html> <http://www.test.de> <ex:html-microdata>  .
+_:node23dbbed8eec426690ecfbfa7dd6172c <http://schema.org/Person/colleague> <http://www.xyz.edu/students/bobsmith.html> <http://www.test.de> <ex:html-microdata>  .
+_:node23dbbed8eec426690ecfbfa7dd6172c <http://schema.org/Person/email> <mailto:jane-doe@xyz.edu> <http://www.test.de> <ex:html-microdata>  .
+_:node23dbbed8eec426690ecfbfa7dd6172c <http://schema.org/Person/url> <http://www.janedoe.com> <http://www.test.de> <ex:html-microdata>  .
+<http://www.test.de> <http://www.w3.org/1999/xhtml/microdata#item> _:node23dbbed8eec426690ecfbfa7dd6172c <http://www.test.de> <ex:html-microdata>  .
+<http://www.test.de> <http://purl.org/dc/terms/title> "Hello World!" <http://www.test.de> <ex:html-microdata>  .

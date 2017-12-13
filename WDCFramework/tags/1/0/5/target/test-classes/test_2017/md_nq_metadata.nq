@@ -1,0 +1,33 @@
+<http://www.test.de> <http://opengraphprotocol.org/schema/description> "Apple iPhone 6 Plus 5.5\" 16 64 128GB GSM \"Factory Unlocked\" Smartphone Gold/ Gray/ Silver. Lock Status: Factory Unlocked. Apple iPhone 4S 8-32GB Factory Unlocked Smartphone Black/ White. Model: iPhone 6 Plus A1522. | eBay!" <http://www.test.de> <ex:html-rdfa>  .
+<http://www.test.de> <http://opengraphprotocol.org/schema/image> "http://i.ebayimg.com/images/i/162470615893-0-1/s-l1000.jpg" <http://www.test.de> <ex:html-rdfa>  .
+<http://www.test.de> <http://opengraphprotocol.org/schema/type> "ebay-objects:item" <http://www.test.de> <ex:html-rdfa>  .
+<http://www.test.de> <http://opengraphprotocol.org/schema/site_name> "eBay" <http://www.test.de> <ex:html-rdfa>  .
+<http://www.test.de> <http://opengraphprotocol.org/schema/url> "https://www.ebay.com/itm/Apple-iPhone-6-Plus-64GB-Factory-Unlocked-Smartphone-Gray-Silver-Gold-/162470615893" <http://www.test.de> <ex:html-rdfa>  .
+<http://www.test.de> <http://opengraphprotocol.org/schema/title> "Apple iPhone 6 Plus - 64GB (Factory Unlocked) Smartphone - Gray Silver Gold | eBay" <http://www.test.de> <ex:html-rdfa>  .
+<http://www.test.de> <http://www.facebook.com/2008/fbmlapp_id> "102628213125203" <http://www.test.de> <ex:html-rdfa>  .
+_:nodea6efa0cda54b2a78b831244d4a92f98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Product> <http://www.test.de> <ex:html-microdata>  .
+_:nodeae85a214515f7acb9f4616a6f81cd4d4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Offer> <http://www.test.de> <ex:html-microdata>  .
+_:nodeae85a214515f7acb9f4616a6f81cd4d4 <https://schema.org/Offer/availableAtOrFrom> "Shenzhen, China"@en <http://www.test.de> <ex:html-microdata>  .
+_:nodeae85a214515f7acb9f4616a6f81cd4d4 <https://schema.org/Offer/areaServed> "\t\t\tAmericas, Europe, Asia, Australia                           \t\t\t\t\u00A0|\u00A0\t\t\t\t\t\t\t\tSee exclusions\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"@en <http://www.test.de> <ex:html-microdata>  .
+_:nodeae85a214515f7acb9f4616a6f81cd4d4 <https://schema.org/Offer/itemCondition> "New"@en <http://www.test.de> <ex:html-microdata>  .
+_:nodea6efa0cda54b2a78b831244d4a92f98 <https://schema.org/Product/offers> _:nodeae85a214515f7acb9f4616a6f81cd4d4 <http://www.test.de> <ex:html-microdata>  .
+_:nodea6efa0cda54b2a78b831244d4a92f98 <https://schema.org/Product/image> <http://www.test.de/./md_files/s-l500.jpg> <http://www.test.de> <ex:html-microdata>  .
+_:nodea6efa0cda54b2a78b831244d4a92f98 <https://schema.org/Product/name> "Details about  \u00A0Apple iPhone 6 Plus - 64GB (Factory Unlocked) Smartphone - Gray Silver Gold"@en <http://www.test.de> <ex:html-microdata>  .
+_:nodea6efa0cda54b2a78b831244d4a92f98 <https://schema.org/Product/mpn> "Does Not Apply"@en <http://www.test.de> <ex:html-microdata>  .
+_:node3697e57e29758386c06d1834925060 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Brand> <http://www.test.de> <ex:html-microdata>  .
+_:node3697e57e29758386c06d1834925060 <http://schema.org/Brand/name> "Apple"@en <http://www.test.de> <ex:html-microdata>  .
+_:nodea6efa0cda54b2a78b831244d4a92f98 <https://schema.org/Product/brand> _:node3697e57e29758386c06d1834925060 <http://www.test.de> <ex:html-microdata>  .
+<http://www.test.de> <http://www.w3.org/1999/xhtml/microdata#item> _:nodea6efa0cda54b2a78b831244d4a92f98 <http://www.test.de> <ex:html-microdata>  .
+_:node5780a7ef1e0569d6e9859c53ac7b47e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/BreadcrumbList> <http://www.test.de> <ex:html-microdata>  .
+_:node92c6ad2a83f90f532954ea1863f293f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/ListItem> <http://www.test.de> <ex:html-microdata>  .
+_:node92c6ad2a83f90f532954ea1863f293f <https://schema.org/ListItem/item> <https://www.ebay.com/rpp/cell-phone-pda> <http://www.test.de> <ex:html-microdata>  .
+_:node92c6ad2a83f90f532954ea1863f293f <https://schema.org/ListItem/name> "Cell Phones & Accessories"@en <http://www.test.de> <ex:html-microdata>  .
+_:node92c6ad2a83f90f532954ea1863f293f <https://schema.org/ListItem/position> "1"@en <http://www.test.de> <ex:html-microdata>  .
+_:node5780a7ef1e0569d6e9859c53ac7b47e <https://schema.org/BreadcrumbList/itemListElement> _:node92c6ad2a83f90f532954ea1863f293f <http://www.test.de> <ex:html-microdata>  .
+_:node15909c46047cab52ef46e6cad7ad11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/ListItem> <http://www.test.de> <ex:html-microdata>  .
+_:node15909c46047cab52ef46e6cad7ad11 <https://schema.org/ListItem/item> <https://www.ebay.com/b/Cell-Phones-Smartphones-/9355> <http://www.test.de> <ex:html-microdata>  .
+_:node15909c46047cab52ef46e6cad7ad11 <https://schema.org/ListItem/name> "Cell Phones & Smartphones"@en <http://www.test.de> <ex:html-microdata>  .
+_:node15909c46047cab52ef46e6cad7ad11 <https://schema.org/ListItem/position> "2"@en <http://www.test.de> <ex:html-microdata>  .
+_:node5780a7ef1e0569d6e9859c53ac7b47e <https://schema.org/BreadcrumbList/itemListElement> _:node15909c46047cab52ef46e6cad7ad11 <http://www.test.de> <ex:html-microdata>  .
+<http://www.test.de> <http://www.w3.org/1999/xhtml/microdata#item> _:node5780a7ef1e0569d6e9859c53ac7b47e <http://www.test.de> <ex:html-microdata>  .
+<http://www.test.de> <http://purl.org/dc/terms/title> "Apple iPhone 6 Plus - 64GB (Factory Unlocked) Smartphone - Gray Silver Gold  | eBay"@en <http://www.test.de> <ex:html-microdata>  .
