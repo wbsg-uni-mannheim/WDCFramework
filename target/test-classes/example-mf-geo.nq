@@ -1,4 +1,0 @@
-_:nodeb58cb54c92290fd20941c83318067c9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/vcard/ns#Location> <http://www.test.de> <ex:html-mf-geo>  .
-_:nodeb7a17d459f41f11ae3e817c183ef198 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/vcard/ns#Location> <http://www.test.de> <ex:html-mf-geo>  .
-_:nodeb7a17d459f41f11ae3e817c183ef198 <http://www.w3.org/2006/vcard/ns#latitude> "45.498677" <http://www.test.de> <ex:html-mf-geo>  .
-_:nodeb7a17d459f41f11ae3e817c183ef198 <http://www.w3.org/2006/vcard/ns#longitude> "-73.570260" <http://www.test.de> <ex:html-mf-geo>  .

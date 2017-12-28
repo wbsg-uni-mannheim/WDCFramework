@@ -319,9 +319,9 @@ public class RDFExtractor {
 //		 any.setHTTPUserAgent("Any23-Servlet");
 
 		DocumentSource any23Source = new ByteArrayDocumentSource(
-				readDocument("src/test/resources/test_2017/md.html").getBytes(), "http://www.test.de", "text/html");
+				readDocument("test.html").getBytes(), "http://www.test.de", "text/html");
 
-		File f = new File("src/test/resources/test_2017/md_nq.nq");
+		File f = new File("src/test/resources/test_2017/fail.nq");
 
 		OutputStreamWriter w;
 		try {

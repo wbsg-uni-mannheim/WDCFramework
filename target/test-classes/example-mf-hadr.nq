@@ -1,5 +1,0 @@
-_:noded59fb910c8885058f0b2a4b9a38e7a64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/vcard/ns#Address> <http://www.test.de> <ex:html-mf2-h-adr>  .
-_:noded59fb910c8885058f0b2a4b9a38e7a64 <http://www.w3.org/2006/vcard/ns#street-address> "17 Austerstr\u00E6ti" <http://www.test.de> <ex:html-mf2-h-adr>  .
-_:noded59fb910c8885058f0b2a4b9a38e7a64 <http://www.w3.org/2006/vcard/ns#locality> "Reykjav\u00EDk" <http://www.test.de> <ex:html-mf2-h-adr>  .
-_:noded59fb910c8885058f0b2a4b9a38e7a64 <http://www.w3.org/2006/vcard/ns#postal-code> "107" <http://www.test.de> <ex:html-mf2-h-adr>  .
-_:noded59fb910c8885058f0b2a4b9a38e7a64 <http://www.w3.org/2006/vcard/ns#country-name> "Iceland" <http://www.test.de> <ex:html-mf2-h-adr>  .

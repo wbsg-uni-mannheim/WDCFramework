@@ -68,6 +68,7 @@ import com.martiansoftware.jsap.JSAPResult;
 import com.martiansoftware.jsap.UnflaggedOption;
 import com.martiansoftware.jsap.UnspecifiedParameterException;
 import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.MessageProperties;
 
 import de.dwslab.dwslib.util.io.InputUtil;
 
@@ -335,6 +336,7 @@ public class MasterOpenstack extends ProcessingNode {
 
 		if ("clearqueue".equals(action)) {
 			new MasterOpenstack().clearQueue();
+			System.out.println("Queue is empty");
 			System.exit(0);
 		}
 
@@ -654,7 +656,7 @@ public class MasterOpenstack extends ProcessingNode {
 
 	
 
-	public void queue(Long limit, String filePath) throws IOException, TimeoutException {
+	public void queue(Long limit, String filePath) throws IOException, TimeoutException, InterruptedException {
 		
 		ConnectionFactory factory = new ConnectionFactory();
 		factory.setHost(getOrCry("queueIP"));
@@ -669,23 +671,29 @@ public class MasterOpenstack extends ProcessingNode {
 		//it is declared differently if it needs to be called from several clients (our case) check here: https://www.rabbitmq.com/api-guide.html
 		channel.queueDeclare(getOrCry("queueName"), false, false, false, null);
 		
+		
+		long existingMessages = channel.messageCount(getOrCry("queueName"));
 		//put messages in the queue
 		BufferedReader br = new BufferedReader(new FileReader(new File(filePath)));
+		
 		
 		String line = null;
 		int counter=0;
 		while ((line = br.readLine()) != null) {
 			counter++;
 			//send the messages to the queue
-			channel.basicPublish("",getOrCry("queueName"),null,line.getBytes());
-			
+			channel.basicPublish("",getOrCry("queueName"),MessageProperties.PERSISTENT_BASIC,line.getBytes());
+
 			if (counter >= limit) break;
 		}
 	 
 		br.close();
+		System.out.println("Queue filled successfully with "+limit+" messages.");
+		while (channel.messageCount(getOrCry("queueName"))< existingMessages + limit) {
+			Thread.sleep(3);
+		}
 		
-		System.out.println("Queue filled successfully with "+channel.messageCount(getOrCry("queueName"))+" messages.");
-		
+		System.out.println("Total amount of messages in the queue:"+channel.messageCount(getOrCry("queueName")));
 		channel.close();
 		connection.close();
 	}

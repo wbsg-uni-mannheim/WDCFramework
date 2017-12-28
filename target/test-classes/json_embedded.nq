@@ -1,6 +1,0 @@
-_:b0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/WebSite> <http://www.test.de> <ex:html-embedded-jsonld>  .
-_:b0 <http://schema.org/potentialAction> _:b1 <http://www.test.de> <ex:html-embedded-jsonld>  .
-_:b0 <http://schema.org/url> <http://www.spiegel.de/> <http://www.test.de> <ex:html-embedded-jsonld>  .
-_:b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/SearchAction> <http://www.test.de> <ex:html-embedded-jsonld>  .
-_:b1 <http://schema.org/query-input> "required name=search_string" <http://www.test.de> <ex:html-embedded-jsonld>  .
-_:b1 <http://schema.org/target> "http://www.spiegel.de/suche/index.html?suchbegriff={search_string}" <http://www.test.de> <ex:html-embedded-jsonld>  .
