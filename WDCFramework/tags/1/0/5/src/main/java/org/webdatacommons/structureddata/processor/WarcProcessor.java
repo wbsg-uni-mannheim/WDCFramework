@@ -409,36 +409,39 @@ public class WarcProcessor extends ProcessingNode implements FileProcessor {
 	 * @throws Exception
 	 * */
 	public static void main(String[] args) throws Exception {
-		JSAP jsap = new JSAP();
-		UnflaggedOption arcFileParam = new UnflaggedOption("arcfile")
-				.setStringParser(JSAP.STRING_PARSER).setRequired(true)
-				.setGreedy(true);
+			JSAP jsap = new JSAP();
+			UnflaggedOption arcFileParam = new UnflaggedOption("arcfile")
+					.setStringParser(JSAP.STRING_PARSER).setRequired(true)
+					.setGreedy(true);
 
-		arcFileParam.setHelp("gzipped ARC files with web crawl data");
+			arcFileParam.setHelp("gzipped ARC files with web crawl data");
 
-		jsap.registerParameter(arcFileParam);
+			jsap.registerParameter(arcFileParam);
 
-		JSAPResult config = jsap.parse(args);
+			JSAPResult config = jsap.parse(args);
 
-		if (!config.success()) {
-			System.err.println("Usage: " + WarcProcessor.class.getName() + " "
-					+ jsap.getUsage());
-			System.err.println(jsap.getHelp());
-			System.exit(1);
-		}
-
-		List<String> arcFiles = Arrays.asList(config.getStringArray("arcfile"));
-		for (String arcFileS : arcFiles) {
-			File arcFile = new File(arcFileS);
-			if (!arcFile.exists() || !arcFile.canRead()) {
-				System.err.println("Unable to open " + arcFile);
-				continue;
+			if (!config.success()) {
+				System.err.println("Usage: " + WarcProcessor.class.getName() + " "
+						+ jsap.getUsage());
+				System.err.println(jsap.getHelp());
+				System.exit(1);
 			}
 
-			new WarcProcessor().process(
-					Channels.newChannel(new FileInputStream(arcFile)),
-					arcFile.toString());
-		}
-	}
+			List<String> arcFiles = Arrays.asList(config.getStringArray("arcfile"));
+			for (String arcFileS : arcFiles) {
+				File arcFile = new File(arcFileS);
+				if (!arcFile.exists() || !arcFile.canRead()) {
+					System.err.println("Unable to open " + arcFile);
+					continue;
+				}
 
+				
+				new WarcProcessor().process(
+						Channels.newChannel(new FileInputStream(arcFile)),
+						arcFile.toString());
+			}
+		
+		
+		
+	}
 }

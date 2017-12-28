@@ -451,13 +451,13 @@ public class Master extends ProcessingNode {
 					filePath);
 //			ArrayList<String> segments = new ArrayList<String>();
 //			try {
-//				segments = CommonCrawlSegments.getSegments("C:\\Users\\User\\workspace\\ExtractionFramework_WDC\\src\\main\\resources\\segments_2016.txt");
+//				//segments = CommonCrawlSegments.getSegments("segments_2017.txt");
 //			} catch (IOException e) {
 //				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
 //			for (String s:segments)
-//				new Master().queue("CC-MAIN-2016-44/segments/"+s+"/warc", null,
+//				new Master().queue("CC-MAIN-2017-47/segments/"+s+"/warc", null,
 //						null);
 			
 			System.exit(0);

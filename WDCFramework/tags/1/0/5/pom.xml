@@ -200,6 +200,11 @@
 		</repository>
 	</repositories>
 	<dependencies>
+		<dependency>
+    		<groupId>sax</groupId>
+   			 <artifactId>sax</artifactId>
+    			<version>2.0.1</version>
+		</dependency>
 		 <dependency>
 			<groupId>org.apache.any23</groupId>
 			<artifactId>apache-any23-core</artifactId>
@@ -386,6 +391,13 @@
       <groupId>org.apache.jclouds.driver</groupId>
       <artifactId>jclouds-slf4j</artifactId>
       <version>${jclouds.version}</version>
+      
+      <exclusions>
+        <exclusion>  <!-- declare the exclusion here -->
+           <groupId>com.google.inject.extensions</groupId>
+    		<artifactId>guice-assistedinject</artifactId>
+        </exclusion>
+      </exclusions> 
     </dependency>
     <dependency>
       <groupId>org.apache.jclouds.driver</groupId>

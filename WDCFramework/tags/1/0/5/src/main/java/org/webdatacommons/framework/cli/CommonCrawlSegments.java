@@ -10,10 +10,10 @@ import com.martiansoftware.jsap.JSAPException;
 public class CommonCrawlSegments {
 
 	public static void main (String args[]) throws JSAPException, IOException{
-		ArrayList<String> allsegments = getSegments("C:\\Users\\User\\workspace\\ExtractionFramework_WDC\\src\\main\\resources\\segments_2016.txt");
+		ArrayList<String> allsegments = getSegments("segments_2017.txt");
 		
 		for (String s:allsegments) {
-			Master.main(new String[] {"queue", "-pCC-MAIN-2016-44/segments/"+s+"/warc"});
+			Master.main(new String[] {"queue", "-pCC-MAIN-2017-47/segments/"+s+"/warc"});
 		}
 	}
 	

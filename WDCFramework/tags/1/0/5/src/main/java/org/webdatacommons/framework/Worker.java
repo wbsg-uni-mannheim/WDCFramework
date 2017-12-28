@@ -303,8 +303,8 @@ public class Worker extends ProcessingNode {
 	public static class ThreadGuard extends Thread {
 		private List<Thread> threads = new ArrayList<Thread>();
 		// can set thread limit to one for debugging
-		//private int threadLimit = Runtime.getRuntime().availableProcessors();
-		private int threadLimit = 1;
+		private int threadLimit = Runtime.getRuntime().availableProcessors();
+		//private int threadLimit = 1;
 		
 		private int threadSerial = 0;
 		private int waitTimeSeconds = 1;
