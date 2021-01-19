@@ -208,8 +208,15 @@
 		 <dependency>
 			<groupId>org.apache.any23</groupId>
 			<artifactId>apache-any23-core</artifactId>
-			<version>2.2</version>
+			<version>2.4</version>
+			<exclusions>
+		        <exclusion>  <!-- declare the exclusion here -->
+		            <groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+		        </exclusion>
+      		</exclusions> 
 		</dependency>
+		
 		<!-- GSON lib to read WAT files JSON -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
@@ -251,11 +258,6 @@
 					<artifactId>slf4j-jdk14</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.10</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
@@ -307,13 +309,6 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
-<!-- 		
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>13.0.1</version>
-		</dependency>
- -->
 		<dependency>
 			<groupId>commoncrawl</groupId>
 			<artifactId>commoncrawl</artifactId>
@@ -321,9 +316,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.archive.heritrix</groupId>
-			<artifactId>heritrix-commons</artifactId>
-			<version>3.1.0</version>
+   			 <groupId>org.archive.heritrix</groupId>
+   			 <artifactId>heritrix-commons</artifactId>
+   			 <version>3.1.0</version>
 		</dependency>
 		<!-- JWAT -->
 		<dependency>
@@ -473,6 +468,11 @@
     <scope>compile</scope>
 </dependency>
 <dependency>
+    <groupId>commons-codec</groupId>
+    <artifactId>commons-codec</artifactId>
+    <version>1.9</version>
+</dependency>
+<dependency>
     <groupId>org.slf4j</groupId>
     <artifactId>slf4j-api</artifactId>
     <version>1.7.25</version>
@@ -484,15 +484,60 @@
     <scope>test</scope>
 </dependency>
 <dependency>
-    <groupId>commons-codec</groupId>
-    <artifactId>commons-codec</artifactId>
-    <version>1.9</version>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>14.0.1</version>
 </dependency>
+<!-- 
 <dependency>
     <groupId>com.google.guava</groupId>
     <artifactId>guava</artifactId>
     <version>19.0</version>
 </dependency>
+ -->
+<!--
+<dependency>
+    <groupId>org.eclipse.rdf4j</groupId>
+    <artifactId>rdf4j-util</artifactId>
+    <version>2.5.2</version>
+</dependency>
+<dependency>
+    <groupId>org.eclipse.rdf4j</groupId>
+    <artifactId>rdf4j-model</artifactId>
+    <version>2.5.2</version>
+</dependency>
+<dependency>
+    <groupId>org.eclipse.rdf4j</groupId>
+    <artifactId>rdf4j-query</artifactId>
+    <version>2.5.2</version>
+</dependency>
+<dependency>
+    <groupId>org.eclipse.rdf4j</groupId>
+    <artifactId>rdf4j-rio-api</artifactId>
+    <version>2.5.2</version>
+</dependency>
+<dependency>
+    <groupId>org.eclipse.rdf4j</groupId>
+    <artifactId>rdf4j-rio-ntriples</artifactId>
+    <version>2.5.2</version>
+</dependency>
+<dependency>
+    <groupId>org.eclipse.rdf4j</groupId>
+    <artifactId>rdf4j-rio-turtle</artifactId>
+    <version>2.5.2</version>
+</dependency>
+<dependency>
+    <groupId>org.eclipse.rdf4j</groupId>
+    <artifactId>rdf4j-repository-sail</artifactId>
+    <version>2.5.2</version>
+</dependency>
+<dependency>
+    <groupId>org.eclipse.rdf4j</groupId>
+    <artifactId>rdf4j-rio-nquads</artifactId>
+    <version>2.5.2</version>
+    
+</dependency>
+!-->
 	</dependencies>
 	<name>DPEF</name>
 </project>

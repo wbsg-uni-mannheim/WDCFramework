@@ -182,7 +182,8 @@ public class Worker extends ProcessingNode {
 					processorClass).newInstance();
 			Map<String, String> stats = processor.process(gzippedWatFileBC,
 					inputFileKey);
-
+			
+			log.info("Processed "+inputFileKey);
 			/**
 			 * force statistics being persisted
 			 */
@@ -194,6 +195,7 @@ public class Worker extends ProcessingNode {
 			 * dies before finishing its task, this does not occur and the
 			 * message is re-queued for another node
 			 */
+			log.info("Now delete the message form the queue "+ inputFileKey);
 			getQueue().deleteMessage(
 					new DeleteMessageRequest(getQueueUrl(), jobMessage
 							.getReceiptHandle()));

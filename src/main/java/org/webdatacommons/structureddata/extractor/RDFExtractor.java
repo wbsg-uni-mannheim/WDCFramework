@@ -37,6 +37,8 @@ import org.apache.any23.extractor.html.XFNExtractorFactory;
 import org.apache.any23.extractor.html.microformats2.HAdrExtractorFactory;
 import org.apache.any23.extractor.microdata.MicrodataExtractorFactory;
 import org.apache.any23.extractor.rdf.JSONLDExtractorFactory;
+import org.apache.any23.extractor.rdfa.RDFa11ExtractorFactory;
+import org.apache.any23.extractor.rdfa.RDFaExtractorFactory;
 import org.apache.any23.mime.MIMEType;
 import org.apache.any23.source.ByteArrayDocumentSource;
 import org.apache.any23.source.DocumentSource;
@@ -67,7 +69,8 @@ public class RDFExtractor {
 	static {
 		List<ExtractorFactory<?>> factories = new ArrayList<ExtractorFactory<?>>();
 		factories.add(new BaselessRDFaExtractorFactory());
-		// factories.add(new RDFaExtractorFactory());
+		//use the BaselessRDFA Extraxtor to avoid extracting og header properties
+		//factories.add(new RDFaExtractorFactory());
 		// factories.add(new RDFa11ExtractorFactory());
 		factories.add(new MicrodataExtractorFactory());
 		factories.add(new GeoExtractorFactory());
@@ -294,10 +297,10 @@ public class RDFExtractor {
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		List<ExtractorFactory<?>> factories = new ArrayList<ExtractorFactory<?>>();
-		factories.add(new EmbeddedJSONLDExtractorFactory());
 		factories.add(new BaselessRDFaExtractorFactory());
-		// factories.add(new RDFaExtractorFactory());
-		// factories.add(new RDFa11ExtractorFactory());
+		//use the BaselessRDFA Extraxtor to avoid extracting og header properties
+		//factories.add(new RDFaExtractorFactory());
+		//factories.add(new RDFa11ExtractorFactory());
 		factories.add(new MicrodataExtractorFactory());
 		factories.add(new GeoExtractorFactory());
 		factories.add(new HCalendarExtractorFactory());
@@ -313,37 +316,43 @@ public class RDFExtractor {
 		factories.add(new HRecipeExtractorFactory());
 		factories.add(new XFNExtractorFactory());
 		factories.add(new JSONLDExtractorFactory());
+		factories.add(new EmbeddedJSONLDExtractorFactory());
+
 
 		Any23 any = new Any23(new ExtractorGroup(factories));
 //		 Any23 any = new Any23();
 //		 any.setHTTPUserAgent("Any23-Servlet");
 
-		DocumentSource any23Source = new ByteArrayDocumentSource(
-				readDocument("test.html").getBytes(), "http://www.test.de", "text/html");
-
-		File f = new File("src/test/resources/test_2017/fail.nq");
-
-		OutputStreamWriter w;
-		try {
-			w = new OutputStreamWriter(new FileOutputStream(f));
-			FilterableTripleHandler writer = new FilterableTripleHandler(w, evilNamespaces, notSoEvilNamespaces);
-
-			ExtractionParameters any23Params = ExtractionParameters.newDefault();
-			any23Params.setFlag("any23.extraction.metadata.timesize", false);
-			any23Params.setFlag("any23.extraction.head.meta", false);
-			ExtractionReport report = any.extract(any23Params, any23Source, writer);
-			System.out.println("Triples:"+writer.getTotalTriplesFound());
-			w.flush();
-			w.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExtractionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		for (File input:new File("C:\\Users\\User\\workspace\\WDC_Extraction_2017\\src\\test\\java\\org\\webdatacommons\\structureddata\\test\\exampledata").listFiles()) {
+			
+			System.out.println("Extract triples from: "+input.getName());
+			DocumentSource any23Source = new ByteArrayDocumentSource(
+					readDocument(input.getPath()).getBytes(), "http://www.test.de", "text/html");
+	
+			File f = new File("C:\\Users\\User\\workspace\\WDC_Extraction_2017\\src\\test\\resources\\test_2020\\results_any23vs2.4\\"+input.getName().replace(".html", ".nq"));
+	
+			OutputStreamWriter w;
+			try {
+				w = new OutputStreamWriter(new FileOutputStream(f));
+				FilterableTripleHandler writer = new FilterableTripleHandler(w, evilNamespaces, notSoEvilNamespaces);
+	
+				ExtractionParameters any23Params = ExtractionParameters.newDefault();
+				any23Params.setFlag("any23.extraction.metadata.timesize", false);
+				any23Params.setFlag("any23.extraction.head.meta", false);
+				ExtractionReport report = any.extract(any23Params, any23Source, writer);
+				System.out.println("Triples:"+writer.getTotalTriplesFound());
+				w.flush();
+				w.close();
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ExtractionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 	}

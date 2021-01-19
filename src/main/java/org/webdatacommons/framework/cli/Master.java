@@ -46,6 +46,8 @@ import org.webdatacommons.structureddata.processor.WarcProcessor;
 import org.webdatacommons.structureddata.util.DataCollector;
 
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.regions.RegionUtils;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.cloudwatch.AmazonCloudWatchClient;
 import com.amazonaws.services.cloudwatch.model.Datapoint;
 import com.amazonaws.services.cloudwatch.model.Dimension;
@@ -57,6 +59,7 @@ import com.amazonaws.services.ec2.model.CancelSpotInstanceRequestsRequest;
 import com.amazonaws.services.ec2.model.DescribeSpotInstanceRequestsRequest;
 import com.amazonaws.services.ec2.model.DescribeSpotInstanceRequestsResult;
 import com.amazonaws.services.ec2.model.LaunchSpecification;
+import com.amazonaws.services.ec2.model.Region;
 import com.amazonaws.services.ec2.model.RequestSpotInstancesRequest;
 import com.amazonaws.services.ec2.model.SpotInstanceRequest;
 import com.amazonaws.services.ec2.model.TerminateInstancesRequest;
@@ -77,6 +80,7 @@ import com.amazonaws.services.simpledb.model.ListDomainsRequest;
 import com.amazonaws.services.simpledb.model.ListDomainsResult;
 import com.amazonaws.services.simpledb.model.SelectRequest;
 import com.amazonaws.services.simpledb.model.SelectResult;
+import com.amazonaws.services.sqs.AmazonSQSClient;
 import com.amazonaws.services.sqs.model.GetQueueAttributesRequest;
 import com.amazonaws.services.sqs.model.GetQueueAttributesResult;
 import com.amazonaws.services.sqs.model.SendMessageBatchRequest;
@@ -310,6 +314,7 @@ public class Master extends ProcessingNode {
 	 * 
 	 * This is designed to work on the Ubuntu 14.04 LTS AMI ami-018c9568
 	 */
+	/*
 	private final String startupScript = "#!/bin/bash \n echo 1 > /proc/sys/vm/overcommit_memory \n"
 			+ " apt-get install -y python-software-properties debconf-utils \n"
 			+ " add-apt-repository -y ppa:webupd8team/java \n "
@@ -321,6 +326,20 @@ public class Master extends ProcessingNode {
 			+ "\" \n java -Xmx"
 			+ getOrCry("javamemory").trim()
 			+ " -jar /tmp/start.jar > /tmp/start.log 2> /tmp/start_errors.log & \n";
+			*/
+	// need to change the bash script to install openjdk for ubuntu 16.04
+	private final String startupScript = "#!/bin/bash \n echo 1 > /proc/sys/vm/overcommit_memory \n"
+			+ " sudo apt-get install -y python-software-properties debconf-utils \n"
+			+ " yes \"\" | sudo add-apt-repository ppa:openjdk-r/ppa\n "
+			+ "sudo apt-get update \n "
+			+ "yes \"\" | sudo apt-get install openjdk-8-jdk \n "
+			+ "sudo apt-get install ca-certificates-java \n"
+			+ "wget -O /tmp/start.jar \""
+			+ getJarUrl()
+			+ "\" \n java -Xmx"
+			+ getOrCry("javamemory").trim()
+			+ " -jar /tmp/start.jar > /tmp/start.log 2> /tmp/start_errors.log & \n";
+	
 	/**
 	 * only run java
 	 */
@@ -446,20 +465,22 @@ public class Master extends ProcessingNode {
 			} catch (UnspecifiedParameterException e) {
 				// do nothing
 			}
-
+			
 			new Master().queue(queueResult.getString("prefix"), limitValue,
 					filePath);
-//			ArrayList<String> segments = new ArrayList<String>();
-//			try {
-//				//segments = CommonCrawlSegments.getSegments("segments_2017.txt");
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			for (String s:segments)
-//				new Master().queue("CC-MAIN-2017-47/segments/"+s+"/warc", null,
-//						null);
+			/*
 			
+			ArrayList<String> segments = new ArrayList<String>();
+			try {
+				segments = CommonCrawlSegments.getSegments("C:\\Users\\User\\workspace\\WDC_Extraction_2017\\src\\main\\resources\\segments2020");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			for (String s:segments)
+				new Master().queue("CC-MAIN-2020-40/segments/"+s+"/warc", limitValue,
+						null);
+			*/
 			System.exit(0);
 		}
 
@@ -484,7 +505,7 @@ public class Master extends ProcessingNode {
 			System.exit(0);
 		}
 		if ("deletedata".equals(action)){
-			new Master().deleteData("wdc-2016-data/deploy_data");
+			new Master().deleteData("wdc-2018-data");
 			System.exit(0);
 		}
 		if ("monitor".equals(action)) {
@@ -925,12 +946,16 @@ public class Master extends ProcessingNode {
 	}
 
 	public void createInstances(int count, double priceLimitDollars) {
-		AmazonEC2 ec2 = new AmazonEC2Client(getAwsCredentials());
-		ec2.setEndpoint(getOrCry("ec2endpoint"));
+		
 
+		
+		AmazonEC2 ec2 = new AmazonEC2Client(getAwsCredentials());		
+	
+                
 		log.info("Requesting " + count + " instances of type "
 				+ getOrCry("ec2instancetype") + " with price limit of "
 				+ priceLimitDollars + " US$");
+		System.out.println(startupScript);
 		log.debug(startupScript);
 
 		try {
@@ -950,6 +975,7 @@ public class Master extends ProcessingNode {
 					.withInstanceType(getOrCry("ec2instancetype"))
 					.withImageId(getOrCry("ec2ami"))
 					.withKeyName(getOrCry("ec2keypair"))
+					.withSubnetId(getOrCry("ec2subnetid"))
 					// .withBlockDeviceMappings(mapping)
 					.withUserData(
 							new String(Base64.encodeBase64(startupScript
