@@ -129,6 +129,7 @@ public class WarcProcessor extends ProcessingNode implements FileProcessor {
 			long pagesGuessedTriples = 0;
 			// number of pages including at least one triple
 			long pagesTriples = 0;
+			
 //			// number of anchors included in the pages
 //			long anchorTotal = 0;
 			// current time of the system when starting process.
@@ -146,28 +147,30 @@ public class WarcProcessor extends ProcessingNode implements FileProcessor {
 
 			// read all entries in the ARC file
 			while (readerIt.hasNext()) {
-
+				
 				ArchiveRecord record = readerIt.next();
 				ArchiveRecordHeader header = record.getHeader();
 				ArcFileItem item = new ArcFileItem();
 				URI uri;
 
 				item.setArcFileName(inputFileKey);
-
 				// WARC contains lots of stuff. We only want HTTP responses
 				if (!header.getMimetype().equals(
 						"application/http; msgtype=response")) {
 					continue;
 				}
+				//inconsistent pages
+				
 				if (pagesTotal % 1000 == 0) {
 					log.info(pagesTotal + " / " + pagesParsed + " / "
 							+ pagesTriples + " / " + pagesErrors);
 				}
-
+				
 				try {
 
 					uri = new URI(header.getUrl());
 					String host = uri.getHost();
+
 					// we only write if its valid
 					if (host == null) {
 						continue;
@@ -185,7 +188,6 @@ public class WarcProcessor extends ProcessingNode implements FileProcessor {
 					pagesTotal++;
 					continue;
 				}
-
 				// only consider HTML responses
 				String contentType = headerKeyValue(headers, "Content-Type",
 						"text/html");
@@ -287,8 +289,11 @@ public class WarcProcessor extends ProcessingNode implements FileProcessor {
 						}
 					}
 					pagesTotal++;
+					//only for local testing purposes
+					//if (pagesTotal==5000) break;
 				}
 			}
+			log.info("Finished processing file: "+inputFileKey);
 			if (logRegexError) {
 				bwriter.flush();
 				try {
@@ -297,6 +302,7 @@ public class WarcProcessor extends ProcessingNode implements FileProcessor {
 					// do nothing;
 				}
 			}
+			log.info("Close the streams:"+inputFileKey);
 			// we close the stream
 			urlBW.close();
 //			anchorBW.close();
@@ -309,7 +315,7 @@ public class WarcProcessor extends ProcessingNode implements FileProcessor {
 			 * write extraction results to s3, if at least one included item was
 			 * guessed to include triples
 			 */
-
+			log.info("Write pages guessed triples "+inputFileKey);
 			if (pagesGuessedTriples > 0) {
 				S3Object dataFileObject = new S3Object(tempOutputFile);
 				dataFileObject.setKey(outputFileKey);
@@ -322,7 +328,7 @@ public class WarcProcessor extends ProcessingNode implements FileProcessor {
 				getStorage().putObject(getOrCry("resultBucket"),
 						statsFileObject);
 			}
-
+			log.info("Write pages total : "+inputFileKey);
 			if (pagesTotal > 0) {
 				S3Object dataFileObject = new S3Object(tempOutputUrlFile);
 				dataFileObject.setKey(outputUrlKey);
@@ -340,6 +346,7 @@ public class WarcProcessor extends ProcessingNode implements FileProcessor {
 			double duration = (System.currentTimeMillis() - start) / 1000.0;
 			double rate = (pagesTotal * 1.0) / duration;
 
+			log.info("Write stats object "+inputFileKey);
 			// create data file statistics and return
 			Map<String, String> dataStats = new HashMap<String, String>();
 			dataStats.put("duration", Double.toString(duration));
@@ -355,7 +362,7 @@ public class WarcProcessor extends ProcessingNode implements FileProcessor {
 					+ pagesParsed + " pages in " + duration + " seconds, "
 					+ rate + " pages/sec");
 
-			reader.close();
+	//		reader.close();
 			return dataStats;
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

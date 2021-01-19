@@ -18,6 +18,7 @@ import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 import org.eclipse.rdf4j.rio.RDFHandlerException;
+import org.eclipse.rdf4j.rio.helpers.BasicWriterSettings;
 import org.eclipse.rdf4j.rio.ntriples.NTriplesUtil;
 import org.webdatacommons.structureddata.extractor.RDFExtractor;
 
@@ -242,6 +243,7 @@ public class FilterableTripleHandler implements TripleHandler {
 	}
 
 	private void printLiteral(Literal l) throws IOException {
+			
 		writer.append(NTriplesUtil.toNTriplesString(l));
 	}
 
