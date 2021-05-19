@@ -1,3 +1,9 @@
+#WDCFramework
+Java Framework which is used by the Web Data Commons project to extract Microdata, Microformats and RDFa data, Web graphs, and HTML tables from the web crawls provided by the Common Crawl Foundation.
+
+More details:
+http://webdatacommons.org/framework/
+
 CommonCrawl Structured Data Extraction - Documentation
 
 This implementation extracts structured web data in various formats from the Common Crawl web corpus by using an AWS pipeline.
