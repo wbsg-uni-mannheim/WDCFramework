@@ -1,4 +1,4 @@
-**WDCFramework**
+# WDCFramework
 Java Framework which is used by the Web Data Commons project to extract Microdata, Microformats and RDFa data, Web graphs, and HTML tables from the web crawls provided by the Common Crawl Foundation.
 
 More details:
