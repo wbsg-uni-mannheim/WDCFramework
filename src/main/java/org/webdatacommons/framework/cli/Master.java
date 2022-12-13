@@ -949,7 +949,8 @@ public class Master extends ProcessingNode {
 		
 
 		
-		AmazonEC2 ec2 = new AmazonEC2Client(getAwsCredentials());		
+		AmazonEC2 ec2 = new AmazonEC2Client(getAwsCredentials());
+		ec2.setEndpoint(getOrCry("ec2endpoint"));
 	
                 
 		log.info("Requesting " + count + " instances of type "
@@ -1073,8 +1074,7 @@ public class Master extends ProcessingNode {
 	}
 
 	private String getJarUrl() {
-		return "http://s3.amazonaws.com/" + getOrCry("deployBucket") + "/"
-				+ getOrCry("deployFilename");
+		return "http://" + getOrCry("deployBucket") + ".s3.amazonaws.com/" 	+ getOrCry("deployFilename");
 	}
 
 	private OutputStream getOutput(String extractor, File outputDir,
